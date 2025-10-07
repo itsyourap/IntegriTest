@@ -68,7 +68,7 @@ Follow these instructions to run the project locally for development and testing
 #### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/Student-Chapter-CSE/integritest.git
+https://github.com/Student-Chapter-CSE/IntegriTest.git
 cd integritest
 ```
 
