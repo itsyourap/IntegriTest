@@ -134,7 +134,7 @@ We ❤️ contributions! Whether it’s fixing a bug, improving documentation, o
 2. **Create a new branch**
 
    ```bash
-   git checkout -b yourname
+   git checkout -b your_branch_name
    ```
 3. **Commit your changes**
 
@@ -144,7 +144,7 @@ We ❤️ contributions! Whether it’s fixing a bug, improving documentation, o
 4. **Push to your branch**
 
    ```bash
-   git push origin yourbranchname
+   git push origin your_branch_name
    ```
 5. **Open a Pull Request**
 
