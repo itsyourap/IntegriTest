@@ -58,7 +58,7 @@ Follow these instructions to run the project locally for development and testing
 
 ### 🧩 Prerequisites
 
-* [Node.js](https://nodejs.org/) and npm (or yarn)
+* [Node.js](https://nodejs.org/) and pnpm (or yarn)
 * [PostgreSQL](https://www.postgresql.org/) (or another SQL database)
 
 ---
@@ -76,7 +76,7 @@ cd integritest
 
 ```bash
 cd server
-npm install
+pnpm install
 ```
 
 Create a `.env` file (copy from `.env.example`) and fill in:
@@ -90,15 +90,15 @@ JWT_SECRET="your_super_secret_key"
 Run migrations if applicable, then start the backend:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 #### 3️⃣ Frontend Setup
 
 ```bash
-cd ../client
-npm install
-npm start
+cd client
+pnpm install
+pnpm dev
 ```
 
 Now open:
