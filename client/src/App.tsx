@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import CreateQuiz from './pages/CreateQuiz';
+import TakeQuiz from './pages/TakeQuiz';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/quiz/create" element={<CreateQuiz />} />
+        <Route path="/quiz/:urlId" element={<TakeQuiz />} />
       </Routes>
     </Router>
   );

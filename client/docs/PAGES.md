@@ -120,6 +120,61 @@
     - Error messages for invalid inputs
     - Prevents progression without required fields
 
+### 6. **Take Quiz Page** (`/quiz/:urlId`)
+
+- **Location**: `src/pages/TakeQuiz.tsx`
+- **Type**: Public page (no authentication required)
+- **Features**:
+  
+  **Start Screen**:
+  - Quiz title and metadata display
+  - Duration and question count
+  - Detailed instructions
+  - Security measures warning banner
+  - Student name input (required)
+  - Start Quiz button
+  
+  **Quiz Interface**:
+  - Clean, distraction-free design
+  - One question at a time
+  - Multiple choice answers (A, B, C, D)
+  - Visual feedback for selected answers
+  - Progress bar showing current question number
+  - Questions answered counter
+  - Previous/Next navigation buttons
+  - Submit Quiz button on final question
+  
+  **Timer & Controls**:
+  - Live countdown timer in header
+  - Red warning when < 5 minutes remaining
+  - Auto-submit when time runs out
+  - Student name displayed in header
+  
+  **Anti-Cheating Features**:
+  - **Tab Switch Detection**:
+    - Tracks when student switches tabs or minimizes window
+    - Shows warning banner on detection
+    - Auto-submits quiz after 3 violations
+  - **Screenshot Protection**:
+    - Blocks PrintScreen key
+    - Blocks Windows Snipping Tool (Ctrl+Shift+S)
+    - Blocks macOS screenshot shortcuts (Cmd+Shift+3/4/5)
+    - Shows alert when screenshot attempt detected
+  - **Content Protection**:
+    - Right-click disabled
+    - Text selection disabled
+    - Copy/paste disabled
+  
+  **Submission**:
+  - Confirmation dialog for unanswered questions
+  - Loading state during submission
+  - Score calculation
+  - Automatic navigation to results page
+  - Tracks metadata: time spent, tab switch count
+  
+- **Dummy Data**: 5-question JavaScript quiz with multiple choice answers
+- **TODO**: Backend API integration for fetching quiz and submitting answers
+
 ## Routing Setup
 
 The application uses **React Router v6** for navigation:
@@ -132,6 +187,7 @@ The application uses **React Router v6** for navigation:
     <Route path="/signup" element={<SignUp />} />
     <Route path="/dashboard" element={<Dashboard />} />
     <Route path="/quiz/create" element={<CreateQuiz />} />
+    <Route path="/quiz/:urlId" element={<TakeQuiz />} />
   </Routes>
 </Router>
 ```
@@ -147,36 +203,31 @@ The application uses **React Router v6** for navigation:
 
 ### Immediate Tasks
 
-1. **Connect to Backend API**:
-   - Implement actual API calls in Login and SignUp pages
-   - Add authentication token management (JWT)
-   - Set up protected routes
+1. **Create Results Page** (`/quiz/:urlId/result`):
+   - Display quiz completion message
+   - Show score and performance metrics
+   - Question-by-question review
+   - Correct vs incorrect answers
+   - Time spent and violations
+   - Share results or return home
 
-2. **Create Dashboard Page** (`/dashboard`):
-   - Teacher's quiz management interface
-   - Display all created quizzes
-   - Quick actions (Create, Edit, Delete)
-   - Analytics overview
-
-3. **Create Quiz Creator Page** (`/quiz/create`):
-   - Multi-step form for quiz creation
-   - Question management (add, edit, delete)
-   - Quiz settings (duration, start/end times, anti-cheating features)
-
-4. **Create Quiz Editor Page** (`/quiz/:id/edit`):
+2. **Create Quiz Editor Page** (`/quiz/:id/edit`):
    - Edit existing quizzes
    - Similar to quiz creator but with pre-filled data
+   - Load quiz from backend
+   - Update existing questions
 
-5. **Create Student Quiz Page** (`/quiz/:urlId`):
-   - Public page for students (no authentication)
-   - Display quiz questions one at a time
-   - Countdown timer
-   - Anti-cheating features implementation
+3. **Connect to Backend API**:
+   - Implement actual API calls in all pages
+   - Add authentication token management (JWT)
+   - Set up protected routes
+   - Error handling and loading states
 
-6. **Create Results Page** (`/quiz/:id/results`):
-   - Display student submissions
+4. **Create Results Dashboard** (`/quiz/:id/results`):
+   - Teacher view of all submissions
    - Individual student performance
    - Analytics and statistics
+   - Export functionality
 
 ### Backend Integration
 
