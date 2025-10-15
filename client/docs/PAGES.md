@@ -47,6 +47,34 @@
   - One lowercase letter
   - One number
 
+### 4. **Dashboard Page** (`/dashboard`)
+
+- **Location**: `src/pages/Dashboard.tsx`
+- **Features**:
+  - Teacher profile header with name and email
+  - Statistics cards showing:
+    - Total quizzes created
+    - Active quizzes count
+    - Total students reached
+    - Total submissions received
+  - Search functionality to filter quizzes by title
+  - Status filter (All, Active, Closed, Draft)
+  - "Create Quiz" button for quick access
+  - Quiz list with detailed cards showing:
+    - Quiz title, status badge, and metadata
+    - Duration, question count, submissions, and average score
+    - Start and end dates
+    - Anti-cheating features enabled (tab detection, screenshot blocking)
+    - Actions menu with:
+      - Edit quiz
+      - View results
+      - Copy quiz link
+      - Preview quiz
+      - Delete quiz
+  - Empty state for no quizzes
+  - Settings and logout buttons
+- **Dummy Data**: 5 sample quizzes with varied status (active, closed, draft)
+
 ## Routing Setup
 
 The application uses **React Router v6** for navigation:
@@ -57,6 +85,7 @@ The application uses **React Router v6** for navigation:
     <Route path="/" element={<Home />} />
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<SignUp />} />
+    <Route path="/dashboard" element={<Dashboard />} />
   </Routes>
 </Router>
 ```
