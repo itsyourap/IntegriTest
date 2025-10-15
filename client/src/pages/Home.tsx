@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { Link } from 'react-router-dom';
 import { Shield, Clock, Eye, CheckCircle, Users, Lock } from 'lucide-react';
 
 const Home: FC = () => {
@@ -19,12 +20,12 @@ const Home: FC = () => {
               <a href="#about" className="text-gray-700 hover:text-indigo-600 transition-colors">
                 About
               </a>
-              <button className="px-4 py-2 text-indigo-600 hover:text-indigo-700 font-medium transition-colors">
+              <Link to="/login" className="px-4 py-2 text-indigo-600 hover:text-indigo-700 font-medium transition-colors">
                 Log In
-              </button>
-              <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors shadow-md">
+              </Link>
+              <Link to="/signup" className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors shadow-md">
                 Sign Up
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -43,9 +44,9 @@ const Home: FC = () => {
               platform to conduct online quizzes. Minimize cheating and distractions with our focused testing environment.
             </p>
             <div className="flex justify-center gap-4">
-              <button className="px-8 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
+              <Link to="/signup" className="px-8 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
                 Get Started Free
-              </button>
+              </Link>
               <button className="px-8 py-4 bg-white text-indigo-600 text-lg font-semibold rounded-lg border-2 border-indigo-600 hover:bg-indigo-50 transition-colors">
                 View Demo
               </button>
@@ -198,9 +199,9 @@ const Home: FC = () => {
           <p className="text-xl text-gray-600 mb-8">
             Join educators who trust IntegriTest for academic integrity
           </p>
-          <button className="px-10 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
+          <Link to="/signup" className="inline-block px-10 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl">
             Start for Free Today
-          </button>
+          </Link>
         </div>
       </section>
 
