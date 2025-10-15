@@ -75,6 +75,51 @@
   - Settings and logout buttons
 - **Dummy Data**: 5 sample quizzes with varied status (active, closed, draft)
 
+### 5. **Create Quiz Page** (`/quiz/create`)
+
+- **Location**: `src/pages/CreateQuiz.tsx`
+- **Features**:
+  - **Multi-step form with 3 steps**:
+
+    **Step 1: Basic Information**
+    - Quiz title input (required)
+    - Instructions textarea (optional)
+    - Duration selector (5-300 minutes)
+    - Start date and time picker
+    - End date and time picker
+    - Security settings:
+      - Tab Switch Detection toggle
+      - Screenshot Protection toggle
+
+    **Step 2: Add Questions**
+    - Question textarea
+    - 4 answer options with radio button selection for correct answer
+    - Add question button
+    - List of added questions with preview
+    - Remove question functionality
+    - Visual indication of correct answers
+
+    **Step 3: Review & Publish**
+    - Complete quiz summary
+    - All quiz metadata display
+    - Questions preview with correct answers highlighted
+    - Publishing checklist and warnings
+  
+  - **Navigation**:
+    - Progress indicator with 3 steps
+    - Previous/Next buttons
+    - Back to Dashboard link
+  
+  - **Actions**:
+    - Save as Draft button (Step 3)
+    - Publish Quiz button (Step 3)
+    - Loading states during save
+  
+  - **Validation**:
+    - Client-side validation on each step
+    - Error messages for invalid inputs
+    - Prevents progression without required fields
+
 ## Routing Setup
 
 The application uses **React Router v6** for navigation:
@@ -86,6 +131,7 @@ The application uses **React Router v6** for navigation:
     <Route path="/login" element={<Login />} />
     <Route path="/signup" element={<SignUp />} />
     <Route path="/dashboard" element={<Dashboard />} />
+    <Route path="/quiz/create" element={<CreateQuiz />} />
   </Routes>
 </Router>
 ```
