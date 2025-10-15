@@ -1,8 +1,9 @@
 import { type FC, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Shield, Mail, Lock, Eye, EyeOff, User, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 const SignUp: FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -73,8 +74,8 @@ const SignUp: FC = () => {
         password: formData.password,
       });
 
-      // On success, redirect to dashboard or login
-      // navigate('/dashboard');
+      // On success, redirect to dashboard
+      navigate('/dashboard');
       
     } catch (err) {
       setError('An error occurred. Please try again.');
